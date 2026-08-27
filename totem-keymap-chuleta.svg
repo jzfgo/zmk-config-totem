@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1834 968" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
-<rect width="1834" height="968" fill="#faf8f4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1834 1324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+<rect width="1834" height="1324" fill="#faf8f4"/>
 <text x="34" y="52" font-size="30" font-weight="800" fill="#2b2925">TOTEM · QWERTY español (macOS)</text>
 <text x="34" y="76" font-size="13.5" fill="#6d675e">Capa NAV: mantener TAB · Capa SYM: mantener ESC · Capa ADJ: desde NAV o SYM, tecla ADJ · Fila central: toque = letra, mantener = modificador</text>
 <text x="34" y="112" font-size="19" font-weight="800" fill="#4A6FA5">BASE</text>
@@ -195,7 +195,7 @@
 <rect x="100" y="614" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
 <text x="129.0" y="649.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">€</text>
 <rect x="486" y="608" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
-<text x="515.0" y="643.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">🔇</text>
+<text x="515.0" y="643.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">?</text>
 <rect x="166" y="594" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
 <text x="195.0" y="629.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">|</text>
 <rect x="552" y="596" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
@@ -304,5 +304,60 @@
 <rect x="1460" y="754" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
 <rect x="1272" y="758" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
 <rect x="1526" y="750" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
-<text x="34" y="942" font-size="12.5" fill="#6d675e">´ ` ^ ¨ son teclas muertas: pulsa y luego la vocal (´+a = á) · Combo Q+W = ESC · Combo S+D+F = capa TVP (¡pulsado simultáneo, ojo!) · Requiere macOS en “Española — ISO”</text>
+<text x="34" y="896" font-size="19" font-weight="800" fill="#3E8E8B">LEARN</text>
+<text x="130" y="895" font-size="12.5" fill="#6d675e">combo S+D+F activa/desactiva · para practicar mecanografía</text>
+<rect x="100" y="940" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="486" y="934" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="166" y="920" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="552" y="922" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="232" y="910" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="618" y="910" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="298" y="922" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="684" y="920" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="364" y="934" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="750" y="940" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="100" y="1006" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="129.0" y="1041.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">A</text>
+<rect x="486" y="1000" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="166" y="986" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="195.0" y="1021.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">S</text>
+<rect x="552" y="988" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="581.0" y="1023.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">J</text>
+<rect x="232" y="976" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="261.0" y="1011.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">D</text>
+<rect x="618" y="976" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="647.0" y="1011.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">K</text>
+<rect x="298" y="988" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="327.0" y="1023.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">F</text>
+<rect x="684" y="986" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="713.0" y="1021.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">L</text>
+<rect x="364" y="1000" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="750" y="1006" width="58" height="58" rx="9" fill="#ffffff" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="779.0" y="1041.0" text-anchor="middle" font-size="21" font-weight="600" fill="#2b2925">Ñ</text>
+<rect x="34" y="1072" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="100" y="1072" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="486" y="1066" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="166" y="1052" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="552" y="1054" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="232" y="1042" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="618" y="1042" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="298" y="1054" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="684" y="1052" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="364" y="1066" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="750" y="1072" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="816" y="1072" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="232" y="1142" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="486" y="1150" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="298" y="1146" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="552" y="1146" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="364" y="1150" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<rect x="618" y="1142" width="58" height="58" rx="9" fill="#f2f0ec" stroke="#c8c2b8" stroke-width="1.2"/>
+<text x="942" y="896" font-size="19" font-weight="800" fill="#6d675e">NOTAS</text>
+<text x="942" y="926" font-size="13.5" fill="#6d675e">´ ` ^ ¨ son teclas muertas: pulsa y luego la vocal (´+a = á)</text>
+<text x="942" y="950" font-size="13.5" fill="#6d675e">Combo Q+W = ESC</text>
+<text x="942" y="974" font-size="13.5" fill="#6d675e">Combo S+D+F = capa LEARN: la fila central pierde los modificadores</text>
+<text x="942" y="998" font-size="13.5" fill="#6d675e">al mantener (solo letras). En LEARN, las teclas grises funcionan</text>
+<text x="942" y="1022" font-size="13.5" fill="#6d675e">igual que en BASE (NAV, SYM y símbolos siguen disponibles).</text>
+<text x="942" y="1046" font-size="13.5" fill="#6d675e">Requiere macOS con distribución “Española — ISO”</text>
+<text x="942" y="1070" font-size="13.5" fill="#6d675e">y el teclado identificado como ISO (KeyboardSetupAssistant).</text>
 </svg>

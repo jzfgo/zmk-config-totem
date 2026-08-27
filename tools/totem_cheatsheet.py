@@ -34,7 +34,7 @@ NAV = {
 SYM = {
   "rows": [
     [key("!"), key("@"), key("#"), key("$"), key("%"),   key("&"), key("/"), key("("), key(")"), key("=")],
-    [key("€"), key("|"), key("~"), key("¡"), key("¿"),   key("🔇"), key("'"), key("\""), key("ç"), key("¨")],
+    [key("€"), key("|"), key("~"), key("¡"), key("¿"),   key("?"), key("'"), key("\""), key("ç"), key("¨")],
     [key(""), key("º"), key("ª"), key("\\"), key("`"), key("^"),
      key("Vol−"), key("Vol+"), key("⏮"), key("⏭"), key("⏯"), key("")],
   ],
@@ -50,7 +50,18 @@ ADJ = {
   "thumbs": [key(""), key(""), key(""),   key(""), key(""), key("")],
 }
 
-ACCENT = {"BASE": "#4A6FA5", "NAVI": "#5B8C5A", "SYM": "#B0713C", "ADJ": "#8A5A9E"}
+LEARN = {
+  "rows": [
+    [key(""), key(""), key(""), key(""), key(""),   key(""), key(""), key(""), key(""), key("")],
+    [key("A"), key("S"), key("D"), key("F"), key(""),
+     key(""), key("J"), key("K"), key("L"), key("Ñ")],
+    [key(""), key(""), key(""), key(""), key(""), key(""),
+     key(""), key(""), key(""), key(""), key(""), key("")],
+  ],
+  "thumbs": [key(""), key(""), key(""),   key(""), key(""), key("")],
+}
+
+ACCENT = {"BASE": "#4A6FA5", "NAVI": "#5B8C5A", "SYM": "#B0713C", "ADJ": "#8A5A9E", "LEARN": "#3E8E8B"}
 
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -102,7 +113,7 @@ BLOCK_W = U * 12 + HALF_GAP + 10   # ancho de un bloque de capa
 BLOCK_H = 18 + STAG[0] + U * 3 + 34 + K + 14 + 40
 M = 34                             # margen
 W = M * 2 + BLOCK_W * 2 + 50
-H = 118 + BLOCK_H * 2 + 66
+H = 118 + BLOCK_H * 3 + 30
 
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">',
   f'<rect width="{W}" height="{H}" fill="#faf8f4"/>',
@@ -114,8 +125,23 @@ svg.append(draw_layer(M, y0, "BASE", "esquina sup. = con Mayús · borde inf. = 
 svg.append(draw_layer(M + BLOCK_W + 50, y0, "NAVI", "mantener TAB (pulgar izq.)", NAV))
 svg.append(draw_layer(M, y0 + BLOCK_H, "SYM", "mantener ESC (pulgar der.)", SYM))
 svg.append(draw_layer(M + BLOCK_W + 50, y0 + BLOCK_H, "ADJ", "NAV+RET o SYM+SPC · BOOT = modo flasheo", ADJ))
-fy = H - 26
-svg.append(f'<text x="{M}" y="{fy}" font-size="12.5" fill="#6d675e">´ ` ^ ¨ son teclas muertas: pulsa y luego la vocal (´+a = á) · Combo Q+W = ESC · Combo S+D+F = capa TVP (¡pulsado simultáneo, ojo!) · Requiere macOS en “Española — ISO”</text>')
+svg.append(draw_layer(M, y0 + BLOCK_H * 2, "LEARN", "combo S+D+F activa/desactiva · para practicar mecanografía", LEARN))
+
+# bloque de notas a la derecha de LEARN
+nx = M + BLOCK_W + 50
+ny = y0 + BLOCK_H * 2
+NOTAS = [
+    "´ ` ^ ¨ son teclas muertas: pulsa y luego la vocal (´+a = á)",
+    "Combo Q+W = ESC",
+    "Combo S+D+F = capa LEARN: la fila central pierde los modificadores",
+    "al mantener (solo letras). En LEARN, las teclas grises funcionan",
+    "igual que en BASE (NAV, SYM y símbolos siguen disponibles).",
+    "Requiere macOS con distribución “Española — ISO”",
+    "y el teclado identificado como ISO (KeyboardSetupAssistant).",
+]
+svg.append(f'<text x="{nx}" y="{ny+4}" font-size="19" font-weight="800" fill="#6d675e">NOTAS</text>')
+for i, line in enumerate(NOTAS):
+    svg.append(f'<text x="{nx}" y="{ny + 34 + i * 24}" font-size="13.5" fill="#6d675e">{esc(line)}</text>')
 svg.append('</svg>')
 
 import os
