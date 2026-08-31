@@ -11,6 +11,13 @@
 // QWERTY adaptado a macOS con distribución "Española — ISO".
 // Los símbolos se emiten como la combinación de teclas que produce ese carácter
 // en el layout español de macOS (p. ej. "@" = Opción+2, "/" = Mayús+7).
+//
+// IMPORTANTE: esas combinaciones usan RA() (Option DERECHO), no LA(), a propósito.
+// kitty tiene "macos_option_as_alt left" (~/.config/kitty/kitty.conf), que se queda
+// con el Option izquierdo y lo convierte en Meta para el terminal: ahí LA(N2) se
+// enviaría como ESC 2 y no compondría "@". El Option derecho sí llega a macOS y
+// compone con normalidad. No cambiar RA() por LA() sin ajustar antes kitty.
+// El Alt IZQUIERDO se reserva como modificador Meta real en &mt LALT S.
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
@@ -53,9 +60,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
+                = <&macro_press &kp RALT>
                 , <&macro_tap &kp N2>      // "@" en español = Opción+2
-                , <&macro_release &kp LALT>
+                , <&macro_release &kp RALT>
                 , <&macro_tap &kp G &kp I &kp F>
                 ;
         };
@@ -127,8 +134,8 @@ label= "NAVI"                              ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp ESC     &bt BT_CLR  &kp UP      &kp LS(N0)  &kp LA(SQT)     &kp LA(NUHS) &kp N7     &kp N8      &kp N9      &kp RBKT
-                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LA(LBKT)    &kp LA(RBKT) &kp N4     &kp N5      &kp N6      &kp FSLH
+                &kp ESC     &bt BT_CLR  &kp UP      &kp LS(N0)  &kp RA(SQT)     &kp RA(NUHS) &kp N7     &kp N8      &kp N9      &kp RBKT
+                &kp LSHFT   &kp LEFT    &kp DOWN    &kp RIGHT   &kp RA(LBKT)    &kp RA(RBKT) &kp N4     &kp N5      &kp N6      &kp FSLH
     &trans      &kp DEL     &kp PG_UP   &kp CAPS    &kp PG_DN   &kp LS(N8)      &kp LS(N9)  &kp N1      &kp N2      &kp N3      &kp LS(RBKT) &trans
                                         &trans      &trans      &trans          &mo ADJ     &kp N0      &trans
                         >;
@@ -153,9 +160,9 @@ label= "SYM"                               ;
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp LS(N1)  &kp LA(N2)  &kp LA(N3)  &kp LS(N4)  &kp LS(N5)      &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)
-                &kp LA(E)   &kp LA(N1)  &kp LA(SEMI) &kp EQUAL  &kp LS(EQUAL)   &kp LS(MINUS) &kp MINUS &kp LS(N2)  &kp NUHS    &kp LS(SQT)
-    &trans      &kp GRAVE   &kp LS(GRAVE) &kp LA(GRAVE) &kp LBKT &kp LS(LBKT)   &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT &kp C_PP    &trans
+                &kp LS(N1)  &kp RA(N2)  &kp RA(N3)  &kp LS(N4)  &kp LS(N5)      &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)
+                &kp RA(E)   &kp RA(N1)  &kp RA(SEMI) &kp EQUAL  &kp LS(EQUAL)   &kp LS(MINUS) &kp MINUS &kp LS(N2)  &kp NUHS    &kp LS(SQT)
+    &trans      &kp GRAVE   &kp LS(GRAVE) &kp RA(GRAVE) &kp LBKT &kp LS(LBKT)   &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT &kp C_PP    &trans
                                         &trans      &gif        &mo ADJ         &trans      &trans      &trans
                         >;
                 };
