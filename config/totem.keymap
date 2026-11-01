@@ -52,6 +52,14 @@
                 key-positions = <11 12 13>;
                 bindings = <&tog LEARN>;
             };
+            // ç = tecla junto a ´ en el ISO español (NUHS); con ⇧ sale Ç.
+            // Solo en BASE/LEARN para no chocar con Caps/PgDn (NAV) ni % ^ (SYM).
+            combo_cedilla {
+                timeout-ms = <50>;
+                key-positions = <23 24>;
+                bindings = <&kp NUHS>;
+                layers = <BASE LEARN>;
+            };
     };
 
     // Tri-layer: mantener NAV (TAB) y SYM (ESC) a la vez activa ADJ.

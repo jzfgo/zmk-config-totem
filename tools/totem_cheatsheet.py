@@ -184,7 +184,7 @@ ny = y0 + BLOCK_H * 2
 NOTAS = [
     "´ ¨ (BASE) son teclas muertas: pulsa y luego la vocal (´+a = á)",
     "En SYM, ` ^ ~ salen literales (macro: tecla muerta + espacio)",
-    "Combo Q+W = ESC",
+    "Combo Q+W = ESC · Combo C+V = ç (con ⇧: Ç)",
     "Combo S+D+F = capa LEARN: la fila central pierde los modificadores",
     "al mantener (solo letras).",
     "Gris claro con borde discontinuo = transparente: hace lo de la capa",

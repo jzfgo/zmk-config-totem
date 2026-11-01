@@ -431,7 +431,7 @@
 <text x="942" y="896" font-size="19" font-weight="800" class="muted">NOTAS</text>
 <text x="942" y="926" font-size="13.5" class="muted">´ ¨ (BASE) son teclas muertas: pulsa y luego la vocal (´+a = á)</text>
 <text x="942" y="950" font-size="13.5" class="muted">En SYM, ` ^ ~ salen literales (macro: tecla muerta + espacio)</text>
-<text x="942" y="974" font-size="13.5" class="muted">Combo Q+W = ESC</text>
+<text x="942" y="974" font-size="13.5" class="muted">Combo Q+W = ESC · Combo C+V = ç (con ⇧: Ç)</text>
 <text x="942" y="998" font-size="13.5" class="muted">Combo S+D+F = capa LEARN: la fila central pierde los modificadores</text>
 <text x="942" y="1022" font-size="13.5" class="muted">al mantener (solo letras).</text>
 <text x="942" y="1046" font-size="13.5" class="muted">Gris claro con borde discontinuo = transparente: hace lo de la capa</text>
