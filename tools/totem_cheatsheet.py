@@ -32,7 +32,7 @@ NAV = {
     [TR, key("DEL"), key("Pg↑"), key("Caps"), key("Pg↓"), key("("),
      key(")"), key("1"), key("2"), key("3"), key("*"), key("/")],
   ],
-  "thumbs": [TR, key("●",_, "NAV"), TR,   TR, key("0"), TR],
+  "thumbs": [TR, key("●",_, "NAV"), TR,   key("0"), TR, TR],
 }
 SYM = {
   "rows": [
