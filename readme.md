@@ -33,3 +33,5 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 ![Keymap cheatsheet](totem-keymap-cheatsheet.svg)
 
 Regenerate it after changing the keymap: `python3 tools/totem_cheatsheet.py` (the layer data lives inside the script).
+
+To keep it on your desktop, see [desktop-widget](desktop-widget/README.md).
