@@ -28,8 +28,8 @@ TOTEM is a 38 key column-staggered split keyboard running [ZMK](https://zmk.dev/
 - the keyboard should now appear as a mass storage device
 - drag'n'drop the `totem_left-seeeduino_xiao_ble-zmk.uf2` file from the archive onto the storage device
 - repeat this process with the right half and the `totem_right-seeeduino_xiao_ble-zmk.uf2` file.
-## Chuleta del keymap (QWERTY español · macOS)
+## Keymap cheatsheet (Spanish QWERTY · macOS)
 
-![Chuleta del keymap](totem-keymap-chuleta.svg)
+![Keymap cheatsheet](totem-keymap-cheatsheet.svg)
 
-Regenerar tras cambiar el keymap: `python3 tools/totem_cheatsheet.py` (edita los datos de capas dentro del script).
+Regenerate it after changing the keymap: `python3 tools/totem_cheatsheet.py` (the layer data lives inside the script).

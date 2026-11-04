@@ -17,17 +17,17 @@ class Reader: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     func centralManagerDidUpdateState(_ c: CBCentralManager) {
         guard c.state == .poweredOn else {
-            if c.state == .unauthorized { print("ERROR: sin permiso de Bluetooth para el terminal"); exit(1) }
+            if c.state == .unauthorized { print("ERROR: the terminal has no Bluetooth permission"); exit(1) }
             return
         }
         let connected = c.retrieveConnectedPeripherals(withServices: [BAT_SERVICE])
         if let t = connected.first(where: { $0.name == "TOTEM" }) ?? connected.first {
-            print("conectando a \(t.name ?? "?")...")
+            print("connecting to \(t.name ?? "?")...")
             totem = t
             t.delegate = self
             c.connect(t)
         } else {
-            print("ERROR: no hay ningún periférico conectado con servicio de batería")
+            print("ERROR: no connected peripheral with a battery service")
             exit(1)
         }
     }
@@ -38,7 +38,7 @@ class Reader: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
     func peripheral(_ p: CBPeripheral, didDiscoverServices error: Error?) {
         let bats = p.services?.filter { $0.uuid == BAT_SERVICE } ?? []
-        print("servicios de batería encontrados: \(bats.count)")
+        print("battery services found: \(bats.count)")
         pending = bats.count
         for s in bats { p.discoverCharacteristics([BAT_LEVEL], for: s) }
         if bats.isEmpty { exit(0) }
@@ -51,8 +51,8 @@ class Reader: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     func peripheral(_ p: CBPeripheral, didUpdateValueFor ch: CBCharacteristic, error: Error?) {
         found += 1
         let pct = ch.value?.first.map(String.init) ?? "?"
-        let name = found == 1 ? "izquierda (central)" : "derecha (periférica)"
-        print("batería \(found) [\(name)]: \(pct)%")
+        let name = found == 1 ? "left (central)" : "right (peripheral)"
+        print("battery \(found) [\(name)]: \(pct)%")
         pending -= 1
         if pending <= 0 { exit(0) }
     }
@@ -60,4 +60,4 @@ class Reader: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
 let r = Reader()
 RunLoop.main.run(until: Date(timeIntervalSinceNow: 20))
-print("fin (timeout)")
+print("done (timeout)")

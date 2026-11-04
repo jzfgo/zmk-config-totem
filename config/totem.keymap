@@ -8,16 +8,16 @@
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
 //
-// QWERTY adaptado a macOS con distribución "Española — ISO".
-// Los símbolos se emiten como la combinación de teclas que produce ese carácter
-// en el layout español de macOS (p. ej. "@" = Opción+2, "/" = Mayús+7).
+// QWERTY adapted to macOS with the "Spanish – ISO" input source.
+// Symbols are sent as the key combination that produces that character in the
+// macOS Spanish layout (e.g. "@" = Option+2, "/" = Shift+7).
 //
-// IMPORTANTE: esas combinaciones usan RA() (Option DERECHO), no LA(), a propósito.
-// kitty tiene "macos_option_as_alt left" (~/.config/kitty/kitty.conf), que se queda
-// con el Option izquierdo y lo convierte en Meta para el terminal: ahí LA(N2) se
-// enviaría como ESC 2 y no compondría "@". El Option derecho sí llega a macOS y
-// compone con normalidad. No cambiar RA() por LA() sin ajustar antes kitty.
-// El Alt IZQUIERDO se reserva como modificador Meta real en &mt LALT S.
+// IMPORTANT: those combinations use RA() (RIGHT Option), not LA(), on purpose.
+// kitty has "macos_option_as_alt left" (~/.config/kitty/kitty.conf), which takes
+// the left Option and turns it into Meta for the terminal: there LA(N2) would be
+// sent as ESC 2 and would not compose "@". The right Option does reach macOS and
+// composes normally. Don't swap RA() for LA() without adjusting kitty first.
+// The LEFT Alt is kept as a real Meta modifier in &mt LALT S.
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 
@@ -52,8 +52,8 @@
                 key-positions = <11 12 13>;
                 bindings = <&tog LEARN>;
             };
-            // ç = tecla junto a ´ en el ISO español (NUHS); con ⇧ sale Ç.
-            // Solo en BASE/LEARN para no chocar con Caps/PgDn (NAV) ni % ^ (SYM).
+            // ç = the key next to ´ on the Spanish ISO layout (NUHS); with ⇧ it gives Ç.
+            // Only in BASE/LEARN so it doesn't clash with Caps/PgDn (NAV) or % ^ (SYM).
             combo_cedilla {
                 timeout-ms = <50>;
                 key-positions = <23 24>;
@@ -62,8 +62,8 @@
             };
     };
 
-    // Tri-layer: mantener NAV (TAB) y SYM (ESC) a la vez activa ADJ.
-    // Así ninguna capa gasta una tecla en &mo ADJ.
+    // Tri-layer: holding NAV (TAB) and SYM (ESC) together activates ADJ.
+    // That way no layer spends a key on &mo ADJ.
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -73,9 +73,9 @@
     };
 
     macros {
-        // En el layout español de macOS ` ^ ~ son teclas muertas: esperan una
-        // vocal. Para programar se quieren literales, así que cada macro pulsa la
-        // tecla muerta y luego espacio, que hace que macOS emita el carácter solo.
+        // In the macOS Spanish layout ` ^ ~ are dead keys: they wait for a vowel.
+        // For programming they're wanted as literals, so each macro taps the dead
+        // key and then space, which makes macOS emit the character on its own.
         lit_grave: lit_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -89,7 +89,7 @@
         lit_tilde: lit_tilde {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp RA(SEMI) &kp SPACE>;      // ~ (Opción+ñ)
+            bindings = <&macro_tap &kp RA(SEMI) &kp SPACE>;      // ~ (Option+ñ)
         };
     };
 
@@ -127,9 +127,9 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "LEARN"                             ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// Capa "parche" para practicar mecanografía: se activa/desactiva con el
-// combo S+D+F y sustituye los home-row mods por letras planas. El resto
-// es transparente, así que NAV/SYM y los símbolos siguen funcionando.
+// "Patch" layer for touch-typing practice: toggled with the S+D+F combo, it
+// replaces the home-row mods with plain letters. Everything else is
+// transparent, so NAV/SYM and the symbols keep working.
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
@@ -156,7 +156,7 @@ label= "NAVI"                              ;
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃   (hold)  ┃           ┃   ┃     0     ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
- // La posición de ESC debe quedar &trans: así TAB→ESC activa SYM y, con ella, ADJ (tri-layer).
+ // The ESC position must stay &trans: that way TAB→ESC activates SYM and, with it, ADJ (tri-layer).
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
@@ -200,13 +200,13 @@ label= "SYM"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "ADJ"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// Se activa sola manteniendo TAB (NAV) + ESC (SYM): ver conditional_layers.
+// Activates by itself while holding TAB (NAV) + ESC (SYM): see conditional_layers.
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃ BT NEXT   ┃           ┃ CAPT PANT ┃ PLAY/PAUSE┃   PREV    ┃   ┃   NEXT    ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+//             ┃ BT NEXT   ┃           ┃ FULL SHOT ┃ PLAY/PAUSE┃   PREV    ┃   ┃   NEXT    ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃ BT PREV   ┃ BLOQUEAR  ┃ CAPT ZONA ┃   MUTE    ┃   VOL-    ┃   ┃   VOL+    ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
+//             ┃ BT PREV   ┃   LOCK    ┃ AREA SHOT ┃   MUTE    ┃   VOL-    ┃   ┃   VOL+    ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃ CAPT/GRAB ┃ MISSION C ┃   BRI-    ┃   ┃   BRI+    ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃ SPOTLIGHT ┃
+// ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃ SHOT/REC  ┃ MISSION C ┃   BRI-    ┃   ┃   BRI+    ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃ SPOTLIGHT ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃ BOOTLOAD  ┃ NAV(hold) ┃   RESET   ┃   ┃   RESET   ┃ SYM(hold) ┃ BOOTLOAD  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛

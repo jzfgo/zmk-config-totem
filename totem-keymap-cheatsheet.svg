@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1834 1324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
 <style>.bg{fill:#faf8f4}.ink{fill:#2b2925}.muted{fill:#6d675e}.sec{fill:#8a8378}.inh{fill:#b4ada2}.inh2{fill:#c4beb4}.k{fill:#ffffff;stroke:#c8c2b8}.off{fill:#f2f0ec;stroke:#c8c2b8}.none{fill:#f2f0ec;stroke:#c8c2b8}.a-BASE{fill:#4A6FA5}.a-NAVI{fill:#5B8C5A}.a-SYM{fill:#B0713C}.a-ADJ{fill:#8A5A9E}.a-LEARN{fill:#3E8E8B}@media (prefers-color-scheme: dark){.bg{fill:#1b1a18}.ink{fill:#ece8e1}.muted{fill:#a8a196}.sec{fill:#9a9387}.inh{fill:#7a7469}.inh2{fill:#6e685e}.k{fill:#2b2926;stroke:#4a463f}.off{fill:#24221f;stroke:#58534b}.none{fill:#25231f;stroke:#615b52}.a-BASE{fill:#86A9DE}.a-NAVI{fill:#8CC08A}.a-SYM{fill:#E0A46E}.a-ADJ{fill:#C094D2}.a-LEARN{fill:#6FC4BF}}</style>
 <rect class="bg" width="1834" height="1324"/>
-<text x="34" y="52" font-size="30" font-weight="800" class="ink">TOTEM · QWERTY español (macOS)</text>
-<text x="34" y="76" font-size="13.5" class="muted">Capa NAV: mantener TAB · Capa SYM: mantener ESC · Capa ADJ: mantener TAB + ESC · Fila central: toque = letra, mantener = modificador</text>
+<text x="34" y="52" font-size="30" font-weight="800" class="ink">TOTEM · Spanish QWERTY (macOS)</text>
+<text x="34" y="76" font-size="13.5" class="muted">NAV layer: hold TAB · SYM layer: hold ESC · ADJ layer: hold TAB + ESC · Home row: tap = letter, hold = modifier</text>
 <text x="34" y="112" font-size="19" font-weight="800" class="a-BASE">BASE</text>
-<text x="130" y="111" font-size="12.5" class="muted">esquina sup. = con Mayús · borde inf. = al mantener</text>
+<text x="130" y="111" font-size="12.5" class="muted">top corner = with Shift · bottom edge = on hold</text>
 <rect class="k" x="100" y="156" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="129.0" y="191.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">Q</text>
 <rect class="k" x="486" y="150" width="58" height="58" rx="9" stroke-width="1.2"/>
@@ -97,7 +97,7 @@
 <rect class="k" x="618" y="358" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="647.0" y="393.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">⌫</text>
 <text x="942" y="112" font-size="19" font-weight="800" class="a-NAVI">NAVI</text>
-<text x="1038" y="111" font-size="12.5" class="muted">mantener TAB (pulgar izq.)</text>
+<text x="1038" y="111" font-size="12.5" class="muted">hold TAB (left thumb)</text>
 <rect class="k" x="1008" y="156" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1037.0" y="191.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">ESC</text>
 <rect class="k" x="1394" y="150" width="58" height="58" rx="9" stroke-width="1.2"/>
@@ -177,7 +177,7 @@
 <rect class="off" x="1526" y="358" width="58" height="58" rx="9" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="1555.0" y="393.0" text-anchor="middle" font-size="21" font-weight="500" class="inh">⌫</text>
 <text x="34" y="504" font-size="19" font-weight="800" class="a-SYM">SYM</text>
-<text x="130" y="503" font-size="12.5" class="muted">mantener ESC (pulgar der.)</text>
+<text x="130" y="503" font-size="12.5" class="muted">hold ESC (right thumb)</text>
 <rect class="k" x="100" y="548" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="129.0" y="583.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">º</text>
 <rect class="k" x="486" y="542" width="58" height="58" rx="9" stroke-width="1.2"/>
@@ -258,7 +258,7 @@
 <rect class="off" x="618" y="750" width="58" height="58" rx="9" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="647.0" y="785.0" text-anchor="middle" font-size="21" font-weight="500" class="inh">⌫</text>
 <text x="942" y="504" font-size="19" font-weight="800" class="a-ADJ">ADJ</text>
-<text x="1038" y="503" font-size="12.5" class="muted">mantener TAB + ESC (tri-layer) · BOOT = modo flasheo</text>
+<text x="1038" y="503" font-size="12.5" class="muted">hold TAB + ESC (tri-layer) · BOOT = flashing mode</text>
 <rect class="k" x="1008" y="548" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1037.0" y="583.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">BT ▶</text>
 <rect class="k" x="1394" y="542" width="58" height="58" rx="9" stroke-width="1.2"/>
@@ -289,7 +289,7 @@
 <rect class="k" x="1460" y="596" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1489.0" y="631.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">F4</text>
 <rect class="k" x="1140" y="584" width="58" height="58" rx="9" stroke-width="1.2"/>
-<text x="1169.0" y="619.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">Zona</text>
+<text x="1169.0" y="619.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">Area</text>
 <text x="1191" y="599" text-anchor="end" font-size="10.5" class="sec">⌘⇧4</text>
 <rect class="k" x="1526" y="584" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1555.0" y="619.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">F5</text>
@@ -313,7 +313,7 @@
 <rect class="k" x="1460" y="662" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1489.0" y="697.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">F1</text>
 <rect class="k" x="1140" y="650" width="58" height="58" rx="9" stroke-width="1.2"/>
-<text x="1169.0" y="685.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">Grab</text>
+<text x="1169.0" y="685.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">Rec</text>
 <text x="1191" y="665" text-anchor="end" font-size="10.5" class="sec">⌘⇧5</text>
 <rect class="k" x="1526" y="650" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1555.0" y="685.0" text-anchor="middle" font-size="21" font-weight="600" class="ink">F2</text>
@@ -344,7 +344,7 @@
 <rect class="k" x="1526" y="750" width="58" height="58" rx="9" stroke-width="1.2"/>
 <text x="1555.0" y="785.0" text-anchor="middle" font-size="13" font-weight="600" class="ink">BOOT</text>
 <text x="34" y="896" font-size="19" font-weight="800" class="a-LEARN">LEARN</text>
-<text x="130" y="895" font-size="12.5" class="muted">combo S+D+F activa/desactiva · para practicar mecanografía</text>
+<text x="130" y="895" font-size="12.5" class="muted">combo S+D+F toggles it · for touch-typing practice</text>
 <rect class="off" x="100" y="940" width="58" height="58" rx="9" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="129.0" y="975.0" text-anchor="middle" font-size="21" font-weight="500" class="inh">Q</text>
 <rect class="off" x="486" y="934" width="58" height="58" rx="9" stroke-width="1.2" stroke-dasharray="4 3"/>
@@ -428,15 +428,15 @@
 <text x="393.0" y="1185.0" text-anchor="middle" font-size="13" font-weight="500" class="inh">SPC</text>
 <rect class="off" x="618" y="1142" width="58" height="58" rx="9" stroke-width="1.2" stroke-dasharray="4 3"/>
 <text x="647.0" y="1177.0" text-anchor="middle" font-size="21" font-weight="500" class="inh">⌫</text>
-<text x="942" y="896" font-size="19" font-weight="800" class="muted">NOTAS</text>
-<text x="942" y="926" font-size="13.5" class="muted">´ ¨ (BASE) son teclas muertas: pulsa y luego la vocal (´+a = á)</text>
-<text x="942" y="950" font-size="13.5" class="muted">En SYM, ` ^ ~ salen literales (macro: tecla muerta + espacio)</text>
-<text x="942" y="974" font-size="13.5" class="muted">Combo Q+W = ESC · Combo C+V = ç (con ⇧: Ç)</text>
-<text x="942" y="998" font-size="13.5" class="muted">Combo S+D+F = capa LEARN: la fila central pierde los modificadores</text>
-<text x="942" y="1022" font-size="13.5" class="muted">al mantener (solo letras).</text>
-<text x="942" y="1046" font-size="13.5" class="muted">Gris claro con borde discontinuo = transparente: hace lo de la capa</text>
-<text x="942" y="1070" font-size="13.5" class="muted">de debajo (en ADJ, primero SYM, luego NAV, luego BASE).</text>
-<text x="942" y="1094" font-size="13.5" class="muted">Hueco gris vacío = tecla anulada, no hace nada.</text>
-<text x="942" y="1118" font-size="13.5" class="muted">Requiere macOS con distribución “Española — ISO”</text>
-<text x="942" y="1142" font-size="13.5" class="muted">y el teclado identificado como ISO (KeyboardSetupAssistant).</text>
+<text x="942" y="896" font-size="19" font-weight="800" class="muted">NOTES</text>
+<text x="942" y="926" font-size="13.5" class="muted">´ ¨ (BASE) are dead keys: press, then the vowel (´+a = á)</text>
+<text x="942" y="950" font-size="13.5" class="muted">In SYM, ` ^ ~ come out as is (macro: dead key + space)</text>
+<text x="942" y="974" font-size="13.5" class="muted">Combo Q+W = ESC · Combo C+V = ç (with ⇧: Ç)</text>
+<text x="942" y="998" font-size="13.5" class="muted">Combo S+D+F = LEARN layer: the home row loses its hold</text>
+<text x="942" y="1022" font-size="13.5" class="muted">modifiers (letters only).</text>
+<text x="942" y="1046" font-size="13.5" class="muted">Light grey, dashed border = transparent: does what the layer</text>
+<text x="942" y="1070" font-size="13.5" class="muted">below does (in ADJ: SYM first, then NAV, then BASE).</text>
+<text x="942" y="1094" font-size="13.5" class="muted">Empty grey slot = disabled key, does nothing.</text>
+<text x="942" y="1118" font-size="13.5" class="muted">Requires macOS with the “Spanish – ISO” input source</text>
+<text x="942" y="1142" font-size="13.5" class="muted">and the keyboard identified as ISO (KeyboardSetupAssistant).</text>
 </svg>

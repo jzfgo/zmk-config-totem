@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Genera una chuleta SVG del keymap TOTEM QWERTY-ES (4 capas en cuadrícula 2x2)."""
+"""Generate an SVG cheatsheet of the TOTEM Spanish-QWERTY keymap (layers laid out in a grid)."""
 
-K = 58          # lado de tecla
-G = 8           # separación
+K = 58          # key side
+G = 8           # gap between keys
 U = K + G
-HALF_GAP = 56   # hueco entre mitades
-# stagger columnar por dedo (meñique→interior), en px
+HALF_GAP = 56   # gap between the two halves
+# column stagger per finger (pinky → inner), in px
 STAG = [30, 10, 0, 12, 24]
 
-# --- datos: (tap, shift/nota, hold) ---
+# --- data: (tap, shifted/note, hold) ---
 _ = None
 def key(tap, sec=None, hold=None): return (tap, sec, hold)
-# &trans: se resuelve contra las capas inferiores y se pinta atenuado.
-# key("") es &none: hueco vacío que no hace nada.
+# &trans: resolved against the layers below and drawn faded.
+# key("") is &none: an empty slot that does nothing.
 TR = ("__trans__", None, None)
 
 BASE = {
@@ -46,8 +46,8 @@ SYM = {
 ADJ = {
   "rows": [
     [key("BT ▶"), key(""), key("Capt", "⌘⇧3"), key("⏯"), key("⏮"),   key("⏭"), key("F7"), key("F8"), key("F9"), key("F12")],
-    [key("BT ◀"), key("Lock", "⌃⌘Q"), key("Zona", "⌘⇧4"), key("Mute"), key("Vol−"),   key("Vol+"), key("F4"), key("F5"), key("F6"), key("F11")],
-    [key("BT", "CLR"), key("OUT", "USB/BT"), key(""), key("Grab", "⌘⇧5"), key("MCtl", "⌃↑"), key("☀−"),
+    [key("BT ◀"), key("Lock", "⌃⌘Q"), key("Area", "⌘⇧4"), key("Mute"), key("Vol−"),   key("Vol+"), key("F4"), key("F5"), key("F6"), key("F11")],
+    [key("BT", "CLR"), key("OUT", "USB/BT"), key(""), key("Rec", "⌘⇧5"), key("MCtl", "⌃↑"), key("☀−"),
      key("☀+"), key("F1"), key("F2"), key("F3"), key("F10"), key("Spot", "⌘␣")],
   ],
   "thumbs": [key("BOOT"), key("●",_, "NAV"), key("RST"),   key("RST"), key("●",_, "SYM"), key("BOOT")],
@@ -65,8 +65,8 @@ LEARN = {
 }
 
 def resolve(layer, below):
-    """Sustituye cada TR por la primera tecla no transparente de las capas inferiores
-    (en orden de prioridad) y la marca como heredada."""
+    """Replace each TR with the first non-transparent key in the layers below
+    (in priority order) and mark it as inherited."""
     def at(l, part, r, i):
         return l["thumbs"][i] if part == "thumbs" else l["rows"][r][i]
     def fix(part, r, i, k):
@@ -82,13 +82,13 @@ def resolve(layer, below):
         "thumbs": [fix("thumbs", 0, i, k) for i, k in enumerate(layer["thumbs"])],
     }
 
-# ADJ se activa con NAV+SYM a la vez: sus &trans caen primero en SYM (capa 3), luego NAV, luego BASE.
+# ADJ is NAV+SYM held together: its &trans fall through to SYM (layer 3) first, then NAV, then BASE.
 ADJ_R   = resolve(ADJ,   [SYM, NAV, BASE])
 NAV_R   = resolve(NAV,   [BASE])
 SYM_R   = resolve(SYM,   [BASE])
 LEARN_R = resolve(LEARN, [BASE])
 
-# Colores por clase CSS: el SVG sigue el modo claro/oscuro del sistema (prefers-color-scheme).
+# Colours by CSS class: the SVG follows the system light/dark mode (prefers-color-scheme).
 ACCENT      = {"BASE": "#4A6FA5", "NAVI": "#5B8C5A", "SYM": "#B0713C", "ADJ": "#8A5A9E", "LEARN": "#3E8E8B"}
 ACCENT_DARK = {"BASE": "#86A9DE", "NAVI": "#8CC08A", "SYM": "#E0A46E", "ADJ": "#C094D2", "LEARN": "#6FC4BF"}
 LIGHT = {"bg": "#faf8f4", "ink": "#2b2925", "muted": "#6d675e", "sec": "#8a8378",
@@ -116,7 +116,7 @@ def draw_key(x, y, k, name):
     tap, sec, hold = k[:3]
     inherited = len(k) > 3 and k[3]
     out = []
-    cls = "off" if inherited else ("k" if tap else "none")   # none = &none (hueco anulado)
+    cls = "off" if inherited else ("k" if tap else "none")   # none = &none (disabled slot)
     dash = ' stroke-dasharray="4 3"' if inherited else ""
     out.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{K}" height="{K}" rx="9" stroke-width="1.2"{dash}/>')
     c_tap, c_sec, c_hold = ("inh", "inh2", "inh") if inherited else ("ink", "sec", f"a-{name}")
@@ -140,66 +140,66 @@ def draw_layer(ox, oy, name, subtitle, data):
     xs_left  = [ox + U * (i + 1) for i in range(5)]
     xs_right = [ox + U * 6 + HALF_GAP + U * i for i in range(5)]
     stag_r = list(reversed(STAG))
-    # filas 0-1 (5+5), fila 2 (6+6)
+    # rows 0-1 (5+5), row 2 (6+6)
     for r, row in enumerate(data["rows"]):
         if r < 2:
             for i in range(5):
                 out.append(draw_key(xs_left[i],  top + STAG[i]   + U * r, row[i],   accent))
                 out.append(draw_key(xs_right[i], top + stag_r[i] + U * r, row[5+i], accent))
         else:
-            out.append(draw_key(ox, top + STAG[0] + U * 2, row[0], accent))                     # meñique ext. izq
+            out.append(draw_key(ox, top + STAG[0] + U * 2, row[0], accent))                     # left outer pinky
             for i in range(5):
                 out.append(draw_key(xs_left[i],  top + STAG[i]   + U * 2, row[1+i], accent))
                 out.append(draw_key(xs_right[i], top + stag_r[i] + U * 2, row[6+i], accent))
-            out.append(draw_key(ox + U * 6 + HALF_GAP + U * 5, top + stag_r[4] + U * 2, row[11], accent))  # meñique ext. der
-    # pulgares: izq bajo cols 2-4, der bajo cols 0-2
+            out.append(draw_key(ox + U * 6 + HALF_GAP + U * 5, top + stag_r[4] + U * 2, row[11], accent))  # right outer pinky
+    # thumbs: left under cols 2-4, right under cols 0-2
     ty = top + U * 3 + 34
     for i in range(3):
         out.append(draw_key(xs_left[2] + U * i, ty + 4 * i, data["thumbs"][i], accent))
         out.append(draw_key(xs_right[0] + U * i, ty + 8 - 4 * i, data["thumbs"][3+i], accent))
     return "\n".join(out)
 
-BLOCK_W = U * 12 + HALF_GAP + 10   # ancho de un bloque de capa
+BLOCK_W = U * 12 + HALF_GAP + 10   # width of one layer block
 BLOCK_H = 18 + STAG[0] + U * 3 + 34 + K + 14 + 40
-M = 34                             # margen
+M = 34                             # margin
 W = M * 2 + BLOCK_W * 2 + 50
 H = 118 + BLOCK_H * 3 + 30
 
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">',
   STYLE,
   f'<rect class="bg" width="{W}" height="{H}"/>',
-  f'<text x="{M}" y="52" font-size="30" font-weight="800" class="ink">TOTEM · QWERTY español (macOS)</text>',
-  f'<text x="{M}" y="76" font-size="13.5" class="muted">Capa NAV: mantener TAB · Capa SYM: mantener ESC · Capa ADJ: mantener TAB + ESC · Fila central: toque = letra, mantener = modificador</text>',
+  f'<text x="{M}" y="52" font-size="30" font-weight="800" class="ink">TOTEM · Spanish QWERTY (macOS)</text>',
+  f'<text x="{M}" y="76" font-size="13.5" class="muted">NAV layer: hold TAB · SYM layer: hold ESC · ADJ layer: hold TAB + ESC · Home row: tap = letter, hold = modifier</text>',
 ]
 y0 = 108
-svg.append(draw_layer(M, y0, "BASE", "esquina sup. = con Mayús · borde inf. = al mantener", BASE))
-svg.append(draw_layer(M + BLOCK_W + 50, y0, "NAVI", "mantener TAB (pulgar izq.)", NAV_R))
-svg.append(draw_layer(M, y0 + BLOCK_H, "SYM", "mantener ESC (pulgar der.)", SYM_R))
-svg.append(draw_layer(M + BLOCK_W + 50, y0 + BLOCK_H, "ADJ", "mantener TAB + ESC (tri-layer) · BOOT = modo flasheo", ADJ_R))
-svg.append(draw_layer(M, y0 + BLOCK_H * 2, "LEARN", "combo S+D+F activa/desactiva · para practicar mecanografía", LEARN_R))
+svg.append(draw_layer(M, y0, "BASE", "top corner = with Shift · bottom edge = on hold", BASE))
+svg.append(draw_layer(M + BLOCK_W + 50, y0, "NAVI", "hold TAB (left thumb)", NAV_R))
+svg.append(draw_layer(M, y0 + BLOCK_H, "SYM", "hold ESC (right thumb)", SYM_R))
+svg.append(draw_layer(M + BLOCK_W + 50, y0 + BLOCK_H, "ADJ", "hold TAB + ESC (tri-layer) · BOOT = flashing mode", ADJ_R))
+svg.append(draw_layer(M, y0 + BLOCK_H * 2, "LEARN", "combo S+D+F toggles it · for touch-typing practice", LEARN_R))
 
-# bloque de notas a la derecha de LEARN
+# notes block, right of LEARN
 nx = M + BLOCK_W + 50
 ny = y0 + BLOCK_H * 2
-NOTAS = [
-    "´ ¨ (BASE) son teclas muertas: pulsa y luego la vocal (´+a = á)",
-    "En SYM, ` ^ ~ salen literales (macro: tecla muerta + espacio)",
-    "Combo Q+W = ESC · Combo C+V = ç (con ⇧: Ç)",
-    "Combo S+D+F = capa LEARN: la fila central pierde los modificadores",
-    "al mantener (solo letras).",
-    "Gris claro con borde discontinuo = transparente: hace lo de la capa",
-    "de debajo (en ADJ, primero SYM, luego NAV, luego BASE).",
-    "Hueco gris vacío = tecla anulada, no hace nada.",
-    "Requiere macOS con distribución “Española — ISO”",
-    "y el teclado identificado como ISO (KeyboardSetupAssistant).",
+NOTES = [
+    "´ ¨ (BASE) are dead keys: press, then the vowel (´+a = á)",
+    "In SYM, ` ^ ~ come out as is (macro: dead key + space)",
+    "Combo Q+W = ESC · Combo C+V = ç (with ⇧: Ç)",
+    "Combo S+D+F = LEARN layer: the home row loses its hold",
+    "modifiers (letters only).",
+    "Light grey, dashed border = transparent: does what the layer",
+    "below does (in ADJ: SYM first, then NAV, then BASE).",
+    "Empty grey slot = disabled key, does nothing.",
+    "Requires macOS with the “Spanish – ISO” input source",
+    "and the keyboard identified as ISO (KeyboardSetupAssistant).",
 ]
-svg.append(f'<text x="{nx}" y="{ny+4}" font-size="19" font-weight="800" class="muted">NOTAS</text>')
-for i, line in enumerate(NOTAS):
+svg.append(f'<text x="{nx}" y="{ny+4}" font-size="19" font-weight="800" class="muted">NOTES</text>')
+for i, line in enumerate(NOTES):
     svg.append(f'<text x="{nx}" y="{ny + 34 + i * 24}" font-size="13.5" class="muted">{esc(line)}</text>')
 svg.append('</svg>')
 
 import os
-path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "totem-keymap-chuleta.svg")
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "totem-keymap-cheatsheet.svg")
 with open(path, "w") as f:
     f.write("\n".join(svg))
 print(f"OK → {path}")
