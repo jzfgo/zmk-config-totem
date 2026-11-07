@@ -42,3 +42,14 @@
             ;
     };
 };
+
+/*
+ * Battery scale. ZMK maps 4200 mV to 100 %, but after the XIAO's BQ25101
+ * terminates a charge the cell rests at ~4.12 V, so both halves topped out at
+ * 90 %. Scaling the divider by ~2 % (1510000 -> 1540000) makes a full cell read
+ * 100 %; 0 % moves from 3.45 V to ~3.38 V, still well above the LiPo cutoff.
+ * vbatt is defined by ZMK's seeeduino_xiao_ble.overlay, applied before this file.
+ */
+&vbatt {
+    full-ohms = <1540000>;
+};
